@@ -3,6 +3,7 @@ package com.quest.questapp.controller;
 import com.quest.questapp.model.Post;
 import com.quest.questapp.request.PostCreateRequest;
 import com.quest.questapp.request.PostUpdateRequest;
+import com.quest.questapp.response.PostResponse;
 import com.quest.questapp.service.PostService;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,7 @@ public class PostController {
     }
 
     @GetMapping
-    public List<Post> getAllPosts(@RequestParam Optional<Long> userId){  //requestparam = bize gelen request içindeki parametreleri pars et sağında bulunan değişkenin içine at
+    public List<PostResponse> getAllPosts(@RequestParam Optional<Long> userId){  //requestparam = bize gelen request içindeki parametreleri pars et sağında bulunan değişkenin içine at
         return postService.getAllPosts(userId);
     }
 

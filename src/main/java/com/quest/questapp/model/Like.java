@@ -9,10 +9,11 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name = "like")
+@Table(name = "p_like")
 public class Like {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
